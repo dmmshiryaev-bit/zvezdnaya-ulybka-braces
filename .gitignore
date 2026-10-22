@@ -1,0 +1,13 @@
+.qa/
+research/
+node_modules/
+*.tar.gz
+*.tar
+.openai/*.tmp
+backups/
+
+.openai/
+.vercel/
+.env
+.env.*
+!.env.example

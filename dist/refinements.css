@@ -1,0 +1,59 @@
+/* Portrait-led story, richer pistachio palette and realistic illustrative comparisons. */
+:root{--mint:#dfecdb;--accent:#b9dc8f}
+.journey{background:#dcebdc}
+.hero-sticky{background:radial-gradient(ellipse at 83% 35%,#f0f4e9 0%,#dcebdc 65%);transition:background 1s}
+.journey[data-stage="1"] .hero-sticky{background:radial-gradient(ellipse at 83% 35%,#edf4df 0%,#d3e5c9 70%)}
+.journey[data-stage="2"] .hero-sticky{background:radial-gradient(ellipse at 83% 35%,#f4f3d7 0%,#cee2b8 72%)}
+.journey[data-stage="3"] .hero-sticky{background:radial-gradient(ellipse at 85% 20%,#f6e8bc 0%,#c8dfa7 45%,#b4d491 100%)}
+.portrait-art{min-height:550px;align-self:stretch;margin-left:15px}
+.portrait-frame{position:absolute;inset:3% 0 9% 4%;overflow:hidden;border-radius:210px 210px 25px 25px;background:#cedfc9;box-shadow:0 22px 70px #2c553b15;isolation:isolate}
+.portrait-slide{position:absolute;width:100%;height:100%;object-fit:cover;object-position:50% 43%;opacity:0;transition:opacity .85s ease;z-index:0;will-change:opacity}
+.portrait-slide.active{opacity:1;z-index:1}
+.portrait-vignette{position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(0deg,#3a5c361e,transparent 45%)}
+.portrait-art .floating-label{top:10%;left:-3%;font-size:9px;z-index:4;background:#fbfff2ed}
+.portrait-art .scene-card{right:-15px;bottom:7%;max-width:305px;z-index:5;background:#fcfff0ed;border:1px solid #ffffffda}
+.portrait-art .scene-card h2{font-size:25px}
+.portrait-art .art-note{left:5%;bottom:2%;font-size:8px;max-width:80%;line-height:1.5}
+.smile-pointer{position:absolute;top:51%;left:50%;display:flex;align-items:center;gap:0;z-index:4;opacity:1;pointer-events:none;filter:drop-shadow(0 1px 4px #ffffff70)}
+.pointer-dot{width:10px;height:10px;border:2px solid white;border-radius:50%;background:#619547;box-shadow:0 0 0 5px #ffffff40}
+.pointer-line{height:1px;width:35px;background:white;transform:rotate(-15deg);transform-origin:left center}
+#pointer-caption{font-size:9px;white-space:nowrap;background:#fffffff0;border:1px solid #d6e2cb;border-radius:5px;padding:6px 10px;transform:translateY(-7px);box-shadow:0 5px 20px #284d2b15}
+.portrait-art[data-scene="0"] .smile-pointer{opacity:0}
+.portrait-art[data-scene="3"] .floating-label{background:#edf7d7}
+.journey[data-stage="3"] .hero-copy em{color:#476d37}
+.system-visual{position:relative;height:290px;background:#e8f1e7}
+.system-visual img{width:100%;height:100%;object-fit:cover;object-position:70% 50%;mix-blend-mode:multiply;transition:transform .6s}
+.system-card:hover .system-visual img{transform:scale(1.045)}
+.material-callout{position:absolute;left:15px;bottom:15px;background:#fbfff2e8;border:1px solid #e1ead6;font-size:9px;padding:7px 11px;border-radius:5px;box-shadow:0 4px 20px #2c553b0b}
+.system-visual.ceramic{background:#edf2e5}
+.realistic-comparison{position:relative;height:auto;aspect-ratio:1.5;background:#e5efdf;border-radius:10px;overflow:hidden;isolation:isolate;margin-top:18px;--alignment:50%}
+.realistic-comparison img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.realistic-comparison .alignment-after{clip-path:inset(0 calc(100% - var(--alignment)) 0 0);z-index:1}
+.comparison-divider{position:absolute;top:0;bottom:0;left:var(--alignment);width:1px;background:#ffffffd9;z-index:2;pointer-events:none}
+.comparison-divider:after{content:'↔';position:absolute;top:45%;left:-13px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#234a37;color:white;font-size:13px;border:1px solid white}
+.comparison-card{background:#edf3e5}
+.parents-section{background:#e5ecd7}
+.calculator-section{background:#e4ecd9}
+.quiz-aside{background:#d2e2bf}
+.payment-example{background:#e5efd7}
+.doctor-section,.contacts-section{background:#deebdc}
+.contact-photo img{object-position:45% 55%}
+@media(min-width:1600px){.portrait-frame{inset:3% 0 8% 3%}.portrait-art .scene-card{bottom:8%}.portrait-art{max-height:850px}}
+@media(max-width:1100px){.portrait-art{min-height:510px;margin-left:0}.portrait-art .scene-card{max-width:250px;padding:16px;right:-5px}.portrait-art .scene-card h2{font-size:23px}.portrait-art .floating-label{font-size:8px;left:-1%}.pointer-line{width:20px}#pointer-caption{font-size:8px;padding:5px 7px}.system-visual{height:245px}}
+@media(max-width:800px){.portrait-art{min-height:470px}.portrait-frame{inset:6% 0 10% 0;border-radius:150px 150px 18px 18px}.portrait-art .scene-card{max-width:215px;padding:13px;bottom:6%}.portrait-art .scene-card h2{font-size:20px}.portrait-art .scene-card p{font-size:9px}.portrait-art .floating-label{top:15%;left:-5%;font-size:7px;padding:6px 9px}.portrait-art .art-note{font-size:7px;left:0;bottom:1%}.smile-pointer{top:49%;left:46%}.pointer-line{width:15px}#pointer-caption{font-size:7px}.system-visual{height:215px}.material-callout{font-size:8px;left:10px;bottom:10px}}
+@media(max-width:600px){.journey{height:175svh;min-height:1250px}.hero-sticky{min-height:770px}.hero-copy h1{font-size:42px}.hero-art.portrait-art{height:330px;min-height:330px;max-height:390px;flex:1;margin:12px 0 0}.portrait-frame{inset:0 8% 4% 8%;border-radius:120px 120px 12px 12px}.portrait-slide{object-position:50% 43%}.portrait-art .floating-label{top:8%;left:0;font-size:7px}.portrait-art .scene-card{right:0;bottom:2%;max-width:215px;padding:11px 14px}.portrait-art .scene-card h2{font-size:20px}.portrait-art .scene-card p{font-size:8px}.portrait-art .art-note{bottom:-4%;left:0;font-size:6.5px;max-width:100%}.smile-pointer{top:47%;left:48%}.pointer-line{width:17px}#pointer-caption{font-size:7px;padding:5px 7px}.journey-bottom{padding-top:18px}.system-visual{height:250px}.material-callout{font-size:8px}.realistic-comparison{aspect-ratio:1.4}.comparison-card{padding:18px}.contact-photo{height:245px}}
+@media(max-width:370px){.hero-copy h1{font-size:38px}.hero-art.portrait-art{min-height:310px;height:310px}.portrait-art .scene-card{max-width:200px}.portrait-art .scene-card h2{font-size:19px}.portrait-frame{inset:0 5% 4%}.system-visual{height:225px}}
+@media(prefers-reduced-motion:reduce){.hero-sticky{transition:none}.portrait-slide{transition:none}.journey{height:auto;min-height:0}}
+
+.portrait-art[data-scene="1"] .smile-pointer{display:none}.journey[data-stage="4"] .hero-sticky{background:radial-gradient(ellipse at 85% 20%,#f7e3bb 0%,#c1dc97 42%,#a9ce80 100%)}.journey[data-stage="4"] .hero-copy em{color:#426b2b}.portrait-art[data-scene="4"] .smile-pointer{display:none}
+@media(max-width:600px){.scene-dots button{width:24px}.scroll-hint{max-width:90px}}
+
+.realistic-comparison{touch-action:pan-y;cursor:col-resize;user-select:none;-webkit-user-select:none}.realistic-comparison.dragging{touch-action:none}.realistic-comparison img{-webkit-user-drag:none;pointer-events:none}.comparison-divider{width:44px;left:calc(var(--divider-position, 50%) - 22px);background:transparent;pointer-events:auto;touch-action:none;cursor:col-resize}.comparison-divider:before{content:"";position:absolute;left:21px;top:0;bottom:0;width:2px;background:#ffffffeb;box-shadow:0 0 8px #25493030}.comparison-divider:after{left:8px}.comparison-labels{font-size:11px;font-weight:650}.comparison-section{border-bottom:1px solid #53705b}
+
+.realistic-comparison img{mix-blend-mode:normal}.realistic-comparison .alignment-after{clip-path:inset(0 0 0 calc(100% - var(--alignment)))}
+
+/* Return to the original interactive tooth-position model. */
+.morph-comparison{position:relative;display:grid;place-items:center;height:240px;margin-top:18px;background:radial-gradient(ellipse at 50% 40%,#faffef,#dbeacb);border-radius:10px;overflow:hidden;cursor:col-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none}.morph-comparison svg{width:100%;height:100%;filter:brightness(1.045) saturate(1.13);pointer-events:none}.morph-comparison .comparison-divider{left:calc(var(--divider-position, 50%) - 22px)}.morph-comparison .comparison-divider:before{background:#66855270;box-shadow:none}.morph-comparison.dragging{touch-action:none}
+@media(max-width:600px){.morph-comparison{height:210px}}
+
+#alignment-range{direction:ltr}.morph-comparison{direction:ltr}
